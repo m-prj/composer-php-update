@@ -52,7 +52,7 @@ module.exports = new(function() {
         fs.writeFile(cjsonPath, writeData, function(err) {
                 if (err) { throw err; }
                 // console.log ('Save');
-                Console.appendMsg('compoesr.json内のphpパスを更新しました。');
+                Console.appendMsg('composer.json内のphpパスを更新しました。','info');
         });
     }
 })();
