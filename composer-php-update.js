@@ -12,7 +12,9 @@ module.exports = new(function() {
         cjsonPath = _jsonPath;
         cjsonPathOrg = _jsonPath + '.org';
         phpPath = _phpPath;
+                Console.appendMsg('phpPath0:'+ phpPath);
         
+
         // composer.jsonのバックアップ
         var fs = require('fs');
         fs.stat(cjsonPathOrg, function(stat) {
@@ -40,8 +42,10 @@ module.exports = new(function() {
                     if (b[i] == 'php') {
                         //配列は、正規表現NG。splice（置換したい場所、そこから何個分、文字列）
                         b.splice(i, 1, phpPath);
+                        //b.splice(i, 1, "ajgaa oieajo");
                     }
                 }
+                Console.appendMsg('phpPath1:'+ b.join(' '));
                 aryCmd.push(b.join(' '));
             }
             update_scripts[obj] = aryCmd;
